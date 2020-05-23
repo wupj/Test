@@ -15,7 +15,7 @@ axios.interceptors.request.use(
         loadingInstance = Loading.service({
             lock: true,
             text: '数据加载中，请稍后...',
-            spinner: 'icon-custom-loading',
+            spinner: 'el-icon-loading',
         })
         return config
     }, err => {
