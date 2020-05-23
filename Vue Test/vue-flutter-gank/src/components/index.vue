@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="list-text">{{ item.desc }}</div>
                             </template>
-                            <template >
+                            <template v-else>
                                 <div class="list-left-img">
                                     <el-image :src="item.images[0]" :alt="item.alt">
                                     </el-image>
