@@ -1,0 +1,104 @@
+<template>
+    <div class="index">
+        <el-row>
+            <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                <el-carousel>
+                    <el-carousel-item v-for="(item, index) in banners" :key="index">
+                        <el-image :src="item.image" :alt="item.alt">
+                        </el-image>
+                        <span class="img-title"> {{ item.title }}</span>
+                    </el-carousel-item>
+                </el-carousel>
+                <div class="main-nav">
+                    <el-radio-group v-model="radio" size="mini">
+                        <el-radio-button v-for="(item, index) in navs" :key="index" :label="item.name" >
+                        </el-radio-button>
+                    </el-radio-group>
+                </div>
+                <div class="card-list">
+                    <el-card class="box-card" v-for="(item, index) in data" :key="index">
+                        <div class="list-top">
+                            <div class="list-top-title">
+                                <span class="type">{{ type[item.type]}}</span>
+                                {{ item.title }}
+                            </div>
+                            <div class="list-top-author">{{ item.author }} {{ type[item.type]}}</div>
+                        </div>
+                        <div class="list-img">
+                            <el-image :src="item.url" :alt="item.alt">
+                            </el-image>
+                        </div>
+                        <div class="list-text">{{ item.desc }}</div>
+                    </el-card>
+                </div>
+            </el-col>
+        </el-row>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'index',
+        data() {
+            return {
+                type: {
+                    Girl: '妹纸'
+                },
+                navs: [{
+                    type: 'Girl',
+                    name: '妹纸'
+                }, {
+                    type: 'promote',
+                    name: '推荐'
+                }, {
+                    type: 'Android',
+                    name: 'Android'
+                }, {
+                    type: 'Flutter',
+                    name: 'Flutter'
+                }, {
+                    type: 'IOS',
+                    name: 'IOS'
+                }, {
+                    type: 'frontend',
+                    name: '前端'
+                }, {
+                    type: 'backend',
+                    name: '后端'
+                }, {
+                    type: 'app',
+                    name: 'APP'
+                }],
+                radio: '妹纸',
+                banners: [],
+                data: [],
+                count: 10,
+                page: 1
+            }
+        },
+        mounted() {
+            this.bannersData()
+            this.listData()
+        },
+        methods: {
+            bannersData() {
+                this.$get('/banners ').then(res => {
+                    if (res.status === 100) {
+                        this.banners = res.data
+                    }
+                })
+            },
+            listData () {this.$get(`/data/category/Girl/type/Girl/page/${this.page}/count/${this.count}`).then(res => {
+                if (res.status === 100) {
+                    this.data = res.data
+                }
+            })
+
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>
