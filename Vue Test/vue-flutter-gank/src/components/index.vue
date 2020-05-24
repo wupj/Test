@@ -53,8 +53,10 @@
                     </div>
                 </div>
                 <div class="sidebar">
+                    <v-randomGirl></v-randomGirl>
                     <v-hotGirl></v-hotGirl>
                     <v-hotArticle></v-hotArticle>
+                    <v-hotGanhuo></v-hotGanhuo>
                 </div>
             </el-col>
         </el-row>
@@ -62,14 +64,18 @@
 </template>
 
 <script>
+    import randomGirl from '@/components/randomGirl'
     import hotGirl from '@/components/hotGirl'
     import hotArticle from '@/components/hotArticle'
+    import hotGanhuo from '@/components/hotGanhuo'
 
     export default {
         name: 'index',
         components: {
+            'v-randomGirl': randomGirl,
             'v-hotGirl': hotGirl,
             'v-hotArticle': hotArticle,
+            'v-hotGanhuo': hotGanhuo,
         },
         data() {
             return {

@@ -176,6 +176,7 @@ body {
 
           .el-card__body {
             width: calc(100% - 2.5rem);
+
             .list-top-title {
               line-height: 2rem;
               font-size: 1.0rem;
@@ -260,7 +261,75 @@ body {
       float: right;
       width: 21rem;
 
+      /* 随机妹纸 */
+      .randomGirl {
+        width: 100%;
+        height: 21rem;
+
+        .box-card {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          .el-card__body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+
+            .el-image {
+              background: #333;
+              img {
+                opacity: 0.9;
+              }
+            }
+
+            .img-time {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              padding: 1rem;
+              color: #fff;
+
+              .img-time-day {
+                font-size: 3.5rem;
+              }
+              .img-time-years {
+                display: block;
+              }
+            }
+            .img-footer {
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              padding: 1rem;
+              color: #fff;
+              .img-footer-Journal {
+                font-size: 1.1rem;
+                line-height: 2rem;
+                color: #fff;
+              }
+              span {
+                float: left;
+                background: #448EF6;
+                border-radius: 0.16rem;
+                padding: 0.16rem 0.2rem;
+              }
+              i{
+                float: right;
+                font-size: 1rem;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      /* 最热妹纸 */
       .hotGirl {
+        margin-top: 1rem;
+
         span {
           height: 2rem;
           line-height: 2rem;
@@ -280,9 +349,13 @@ body {
         }
       }
 
-      .hotArticle {
+      /* 最热文章、干货 */
+      .hotArticle, .hotGanhuo {
+        margin-top: 1rem;
+
         .el-card__body {
           width: calc(100% - 2.5rem);
+
           span {
             height: 2rem;
             line-height: 2rem;
@@ -295,6 +368,7 @@ body {
             height: 5rem;
             margin: 0.5rem 0;
             display: block;
+
             .el-image {
               float: left;
               width: 5.6rem;
@@ -305,15 +379,17 @@ body {
                 object-fit: cover;
               }
             }
+
             .title {
               float: left;
               width: calc(100% - 8.5rem);
               height: 100%;
               margin-left: 0.5rem;
-              line-height: 1.5rem;
+              line-height: 1.2rem;
+              font-size: 0.75rem;
               overflow: hidden;
               display: -webkit-box;
-              -webkit-line-clamp: 3;
+              -webkit-line-clamp: 2;
               -webkit-box-orient: vertical;
               display: inline-block;
             }
