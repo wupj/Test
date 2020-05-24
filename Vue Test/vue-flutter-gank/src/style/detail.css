@@ -1,0 +1,85 @@
+.post-content p,
+.post-content figure {
+    margin-bottom: 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    word-wrap: break-word;
+}
+
+.post-content a:not(.btn) {
+    color: #448EF6;
+    text-decoration: underline;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin-bottom: 1rem;
+}
+
+.post-content h1 {
+    font-size: 1.625rem;
+}
+
+.post-content h2 {
+    font-size: 1.25rem;
+    border-left: 3px solid #448EF6;
+    padding-left: 15px;
+}
+
+.post-content h3 {
+    position: relative;
+    font-size: 1.125rem;
+    padding-left: 20px;
+}
+
+.post-content h3:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    height: 8px;
+    width: 8px;
+    border-radius: 20px;
+    background-color: #448EF6;
+}
+
+.post-content h4 {
+    font-size: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #f2f2f5;
+}
+
+.post-content h5,
+.post-content h6 {
+    font-size: .875rem;
+}
+
+.post-content h2.quote {
+    font-size: 1.25rem;
+    color: #2d3757;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #f0f4f7;
+}
+
+.post-content ul {
+    list-style: disc;
+}
+
+.post-content ol {
+    list-style: decimal;
+}
+
+.post-content ul,
+.post-content ol {
+    margin: 0 0 20px 45px;
+    font-size: .875rem;
+}
+
+.post-content ul li,
+.post-content ol li {
+    margin: 15px 0;
+}

@@ -10,7 +10,7 @@
             <div class="img-footer">
                 <router-link :to="`/post/${girlData._id}`" class="img-footer-Journal">妹子图{{ girlData.title }}</router-link>
                 <div class="text-muted">
-                    <span>Random Girl</span>
+                    <span>Random {{ girlData.type }}</span>
                     <i class="el-icon-refresh" @click="getData"></i>
                 </div>
             </div>

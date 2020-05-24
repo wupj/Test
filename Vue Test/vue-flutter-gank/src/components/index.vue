@@ -69,6 +69,8 @@
     import hotArticle from '@/components/hotArticle'
     import hotGanhuo from '@/components/hotGanhuo'
 
+    import _ from 'lodash'
+
     export default {
         name: 'index',
         components: {
@@ -79,9 +81,7 @@
         },
         data() {
             return {
-                type: {
-                    Girl: '妹纸'
-                },
+                type: {},
                 navs: [{
                     type: 'Girl',
                     name: '妹纸'
@@ -116,8 +116,10 @@
             }
         },
         mounted() {
+            this.type = this.$store.getters.getCategoryType
             this.bannersData()
             this.listData()
+            window.addEventListener('scroll', this.scroll)
         },
         watch: {
             radio(value) {
@@ -143,12 +145,26 @@
             },
             /* 获取列表数据 */
             listData() {
+                let _this = this
                 this.$get(`/data/category/${this.category}/type/${this.radio}/page/${this.page}/count/${this.count}`).then(res => {
                     if (res.status === 100) {
-                        this.data = res.data
+                        _this.data =  _this.page === 1 ? res.data : _.concat(_this.data, res.data)
                     }
                 })
+            },
+            scroll() {
+                let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+                let clientHeight = document.documentElement.clientHeight || document.body.clientHeight
+                let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+
+                if(scrollHeight > clientHeight && scrollTop + clientHeight === scrollHeight) {
+                    this.page++
+                    this.listData()
+                }
             }
+        },
+        beforeDestroy() {
+            window.removeEventListener('scroll', this.scroll)
         }
     }
 </script>

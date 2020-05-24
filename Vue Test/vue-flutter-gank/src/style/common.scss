@@ -84,6 +84,15 @@ body {
     margin: auto;
     padding: 30px 0;
 
+    .type {
+      padding: 0.2rem;
+      font-size: 0.6rem;
+      margin-bottom: 0.2rem;
+      color: #fff;
+      background: #448ef6;
+    }
+
+    /* 首页 */
     .no-gutters {
       float: left;
       width: 45rem;
@@ -183,13 +192,6 @@ body {
             }
 
             .list-top {
-              .type {
-                padding: 0.2rem;
-                font-size: 0.6rem;
-                margin-bottom: 0.2rem;
-                color: #fff;
-                background: #448ef6;
-              }
 
               .list-top-author {
                 line-height: 2rem;
@@ -260,6 +262,7 @@ body {
     .sidebar {
       float: right;
       width: 21rem;
+      margin-right: 1rem;
 
       /* 随机妹纸 */
       .randomGirl {
@@ -278,6 +281,7 @@ body {
 
             .el-image {
               background: #333;
+
               img {
                 opacity: 0.9;
               }
@@ -294,10 +298,12 @@ body {
               .img-time-day {
                 font-size: 3.5rem;
               }
+
               .img-time-years {
                 display: block;
               }
             }
+
             .img-footer {
               position: absolute;
               left: 0;
@@ -305,18 +311,21 @@ body {
               bottom: 0;
               padding: 1rem;
               color: #fff;
+
               .img-footer-Journal {
                 font-size: 1.1rem;
                 line-height: 2rem;
                 color: #fff;
               }
+
               span {
                 float: left;
                 background: #448EF6;
                 border-radius: 0.16rem;
                 padding: 0.16rem 0.2rem;
               }
-              i{
+
+              i {
                 float: right;
                 font-size: 1rem;
                 cursor: pointer;
@@ -394,6 +403,195 @@ body {
               display: inline-block;
             }
           }
+        }
+      }
+    }
+
+    /* 专题 */
+    .specials {
+      width: 100%;
+      height: 21rem;
+
+      h1 {
+        margin-bottom: 1.3rem;
+        line-height: 2rem;
+        color: #333;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .el-card {
+        float: left;
+        width: calc(49.5% - 2rem);
+        height: 100%;
+        margin: 1rem;
+
+        .el-card__body {
+          padding: 0;
+
+          .el-image {
+            width: 100%;
+            height: 14.5rem;
+          }
+
+          .card-list-text {
+            padding: 1rem;
+
+            .type {
+              font-size: 0.9rem;
+              line-height: 1.5rem;
+
+              &:hover {
+                color: #448EF6;
+              }
+            }
+
+            .desc {
+              font-size: 0.6rem;
+              line-height: 1.2rem;
+              color: #9ca0ad;
+            }
+          }
+        }
+      }
+    }
+
+    /* 详情 */
+
+    .detail {
+      .el-breadcrumb {
+        margin-bottom: 1.2rem;
+
+        .el-breadcrumb__item {
+          font-size: 0.8rem;
+          font-weight: normal;
+        }
+      }
+
+      .detail-img {
+        position: relative;
+        width: 100%;
+        height: 9.5rem;
+        background: #000;
+
+        .el-image {
+          width: 100%;
+          height: 100%;
+          opacity: 0.9;
+
+          img {
+            object-fit: cover;
+          }
+        }
+
+        .media {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          padding: 1rem;
+
+          span {
+            //display: block;
+            &.type {
+              padding: 0.2rem;
+              font-size: 0.6rem;
+              margin-bottom: 0.2rem;
+              color: #fff;
+              background: #448ef6;
+            }
+
+            &.journal {
+              font-size: 1.2rem;
+              line-height: 3rem;
+              color: #fff;
+              display: block;
+            }
+
+            &.text {
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      .box-card {
+        margin: 1.5rem 0;
+
+        .title {
+          font-size: 0.8rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+
+          i {
+            color: #ccc;
+            font-weight: bold;
+            margin-right: 0.8rem;
+          }
+        }
+
+        .author {
+          font-size: 0.6rem;
+          line-height: 2rem;
+          color: #666;
+        }
+
+        .title {
+          margin-top: 1rem;
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+
+        .content {
+          font-size: 0.8rem;
+          line-height: 1.5rem;
+
+          h3 {
+          }
+        }
+
+        .share-section {
+          margin-top: 1rem;
+          padding: 0 1rem;
+          font-size: 0.9rem;
+        }
+
+        /* 评论*/
+        .comment {
+          padding: 1rem;
+
+          .user-img {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            vertical-align: top;
+            overflow: hidden;
+            display: inline-block;
+          }
+
+          .comment-text {
+            width: calc(100% - 6rem);
+            margin-left: 0.625rem;
+            display: inline-block;
+
+            .user-name {
+              font-size: 1rem;
+              line-height: 2rem;
+            }
+
+            .user-comment {
+              font-size: 0.7rem;
+              line-height: 1.5rem;
+            }
+          }
+        }
+      }
+      .comment-block-top {
+        font-size: 0.8rem;
+        i {
+          margin-right: 0.625rem;
+          vertical-align: middle;
+          font-size: 1.2rem;
+          color: #448EF6;
         }
       }
     }

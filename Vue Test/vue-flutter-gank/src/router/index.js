@@ -7,23 +7,26 @@ const index = r => require.ensure([], () => r(require('@/components/index')), 'i
 const login = r => require.ensure([], () => r(require('@/components/login')), 'login')
 const specials = r => require.ensure([], () => r(require('@/components/specials')), 'specials')
 const api = r => require.ensure([], () => r(require('@/components/api')), 'api')
+const detail = r => require.ensure([], () => r(require('@/components/detail')), 'detail')
 
 const routers = new Router({
     routes: [
         {
             path: '',
-            component: index,
-            children: [{
-                path: '/login',
-                component: login
-            }, {
-                path: '/specials',
-                component: specials,
-                children: []
-            }, {
-                path: '/api',
-                component: api,
-            }]
+            component: index
+        }, {
+            path: '/login',
+            component: login
+        }, {
+            path: '/specials',
+            component: specials,
+            children: []
+        }, {
+            path: '/api',
+            component: api
+        }, {
+            path: '/post/:id',
+            component: detail
         },
     ]
 })

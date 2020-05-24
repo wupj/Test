@@ -23,4 +23,5 @@
 <style lang="scss">
     @import './style/base';
     @import './style/common';
+    @import './style/detail';
 </style>

@@ -55,6 +55,9 @@
                         href: '/ganhuo/ios',
                     }]
                 }, {
+                    name: '专题',
+                    href: '/specials'
+                }, {
                     name: 'Flutter',
                     href: '/specials/flutter'
                 }, {
