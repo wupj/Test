@@ -22,27 +22,35 @@
                             <template v-if="category === 'Girl'">
                                 <div class="list-top">
                                     <div class="list-top-title">
-                                        <span class="type">{{ type[item.type]}}</span>
-                                        {{ item.title }}
+                                        <router-link :to="`/post/${item._id}`">
+                                            <span class="type">{{ type[item.type]}}</span>
+                                            {{ item.title }}
+                                        </router-link>
                                     </div>
                                     <div class="list-top-author">{{ item.author }} {{ type[item.type]}}</div>
                                 </div>
                                 <div class="list-img">
-                                    <el-image :src="item.url" :alt="item.alt">
-                                    </el-image>
+                                    <router-link :to="`/post/${item._id}`">
+                                        <el-image :src="item.url" :alt="item.alt">
+                                        </el-image>
+                                    </router-link>
                                 </div>
                                 <div class="list-text">{{ item.desc }}</div>
                             </template>
                             <template v-else>
                                 <div class="list-left-img">
-                                    <el-image :src="item.images[0]" :alt="item.alt">
-                                    </el-image>
+                                    <router-link :to="`/post/${item._id}`">
+                                        <el-image :src="item.images[0]" :alt="item.alt">
+                                        </el-image>
+                                    </router-link>
                                 </div>
                                 <div class="list-content">
                                     <div class="list-body">
                                         <div class="list-body-title">
-                                            <span class="type">{{ type[item.type]}}</span>
-                                            {{ item.title }}
+                                            <router-link :to="`/post/${item._id}`">
+                                                <span class="type">{{ type[item.type]}}</span>
+                                                {{ item.title }}
+                                            </router-link>
                                         </div>
                                         <div class="list-text">{{ item.desc }}</div>
                                     </div>
