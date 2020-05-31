@@ -40,29 +40,26 @@
                     href: '/'
                 }, {
                     name: '妹子',
-                    href: '/specials/girl'
+                    href: '/specials/Girl'
                 }, {
                     name: '干货',
                     href: 'javascript:;',
                     children: [{
                         name: 'Android',
-                        href: '/ganhuo/android',
+                        href: '/specials/Android',
                     }, {
                         name: 'Flutter',
-                        href: '/ganhuo/flutter',
+                        href: '/specials/Flutter',
                     }, {
                         name: 'IOS',
-                        href: '/ganhuo/ios',
+                        href: '/specials/iOS',
                     }]
                 }, {
                     name: '专题',
                     href: '/specials'
                 }, {
                     name: 'Flutter',
-                    href: '/specials/flutter'
-                }, {
-                    name: 'API',
-                    href: '/api'
+                    href: '/specials/Flutter'
                 }, {
                     name: '留言',
                     href: '/feedback'

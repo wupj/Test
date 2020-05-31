@@ -241,7 +241,7 @@ body {
 
               .list-body-title, .list-footer {
                 line-height: 2rem;
-                font-size: 1.0rem;
+                font-size: 0.8rem;
               }
 
               .list-text {
@@ -257,6 +257,26 @@ body {
           }
         }
       }
+
+        .top {
+          position: relative;
+          .top-text {
+            position:absolute;
+            left: 0;
+            bottom: 0;
+            width: auto;
+            padding: 15px;
+            color: #fff;
+            .name {
+              font-size:1.6rem;
+              line-height: 2.5rem;
+            }
+            .desc {
+              font-size:0.8rem;
+              line-height: 2rem;
+            }
+          }
+        }
     }
 
     .sidebar {

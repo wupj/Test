@@ -6,6 +6,7 @@ Vue.use(Router)
 const index = r => require.ensure([], () => r(require('@/components/index')), 'index')
 const login = r => require.ensure([], () => r(require('@/components/login')), 'login')
 const specials = r => require.ensure([], () => r(require('@/components/specials')), 'specials')
+const special = r => require.ensure([], () => r(require('@/components/special')), 'special')
 const api = r => require.ensure([], () => r(require('@/components/api')), 'api')
 const detail = r => require.ensure([], () => r(require('@/components/detail')), 'detail')
 
@@ -20,7 +21,13 @@ const routers = new Router({
         }, {
             path: '/specials',
             component: specials,
-            children: []
+            /*children: [{
+                path: '/:type',
+                component: special
+            }]*/
+        }, {
+            path: '/specials/:type',
+            component: special
         }, {
             path: '/api',
             component: api
