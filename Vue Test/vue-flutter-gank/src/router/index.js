@@ -8,6 +8,7 @@ const login = r => require.ensure([], () => r(require('@/components/login')), 'l
 const specials = r => require.ensure([], () => r(require('@/components/specials')), 'specials')
 const special = r => require.ensure([], () => r(require('@/components/special')), 'special')
 const detail = r => require.ensure([], () => r(require('@/components/detail')), 'detail')
+const feedback = r => require.ensure([], () => r(require('@/components/feedback')), 'feedback')
 
 const routers = new Router({
     routes: [
@@ -26,7 +27,10 @@ const routers = new Router({
         }, {
             path: '/post/:id',
             component: detail
-        },
+        }, {
+            path: '/feedback',
+            component: feedback
+        }
     ]
 })
 
