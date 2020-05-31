@@ -90,7 +90,7 @@
         },
         watch: {
             $route() {
-                this.id = this.$route.params.type
+                this.type = this.$route.params.type
             },
         },
         computed: {
