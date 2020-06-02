@@ -260,6 +260,13 @@ body {
 
       .top {
         position: relative;
+        width: 100%;
+        height: 20rem;
+
+        .el-image {
+          width: 100%;
+          height: 100%;
+        }
 
         .top-text {
           position: absolute;
@@ -281,13 +288,14 @@ body {
         }
       }
 
-        h5 {
-          font-size: 1.6rem;
-        }
-        p {
-          font-size:0.8rem;
-          line-height: 2rem;
-        }
+      h5 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+        line-height: 2rem;
+      }
     }
 
     .sidebar {

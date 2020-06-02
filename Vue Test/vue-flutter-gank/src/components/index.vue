@@ -139,7 +139,7 @@
                 } else {
                     this.category = 'GanHuo'
                 }
-                this.listData()
+                this.switchType()
             }
         },
         methods: {
@@ -153,12 +153,16 @@
             },
             /* 获取列表数据 */
             listData() {
-                let _this = this
                 this.$get(`/data/category/${this.category}/type/${this.radio}/page/${this.page}/count/${this.count}`).then(res => {
                     if (res.status === 100) {
-                        _this.data =  _this.page === 1 ? res.data : _.concat(_this.data, res.data)
+                        this.data =  this.page === 1 ? res.data : _.concat(this.data, res.data)
                     }
                 })
+            },
+            switchType() {
+                this.data = []
+                this.page = 1
+                this.listData()
             },
             scroll() {
                 let scrollTop = document.documentElement.scrollTop || document.body.scrollTop

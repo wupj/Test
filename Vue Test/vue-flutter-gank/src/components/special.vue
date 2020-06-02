@@ -85,12 +85,17 @@
                 type: '',
                 category: 'Girl',
                 categoryList: [],
-                listData: []
+                listData: [],
+                page: 1,
+                count: 10
             }
         },
         watch: {
             $route() {
                 this.type = this.$route.params.type
+                this.page = 1
+                this.getCategoryType()
+                this.getData()
             },
         },
         computed: {
@@ -109,6 +114,7 @@
             this.categoryList = this.$store.getters.getCategory
             this.getCategoryType()
             this.getData()
+            window.addEventListener('scroll', this.scroll)
         },
         methods: {
             getCategoryType() {
@@ -126,12 +132,25 @@
                 }
             },
             getData() {
-                this.$get(`/data/category/${this.category}/type/${this.type}/page/1/count/50`).then(res => {
+                this.$get(`/data/category/${this.category}/type/${this.type}/page/${this.page}/count/${this.count}`).then(res => {
                     if (res.status === 100) {
-                        this.listData = res.data
+                        this.listData =  this.page === 1 ? res.data : _.concat(this.listData, res.data)
                     }
                 })
+            },
+            scroll() {
+                let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+                let clientHeight = document.documentElement.clientHeight || document.body.clientHeight
+                let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+
+                if(scrollHeight > clientHeight && scrollTop + clientHeight === scrollHeight) {
+                    this.page++
+                    this.getData()
+                }
             }
+        },
+        beforeDestroy() {
+            window.removeEventListener('scroll', this.scroll)
         }
     }
 </script>
