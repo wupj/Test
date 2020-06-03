@@ -24,8 +24,16 @@
                             </ul>
                         </div>
                         <div class="icon">
-                            <i></i>
-                            <i class=""></i>
+                            <i ref="icon-style" class="style-pattern daytime" @click="toggleStyle"></i>
+                            <i ref="icon-search" class="icon-search el-icon-search" @click="toggleSearch"></i>
+                        </div>
+                        <div ref="search-input" class="search-input">
+                            <el-input
+                                placeholder="请输入搜索关键词"
+                                suffix-icon="el-icon-search"
+                                v-model="searchText"
+                            @keyup.enter.native="search">
+                            </el-input>
                         </div>
                     </div>
                 </el-col>
@@ -67,7 +75,29 @@
                 }, {
                     name: '留言',
                     href: '/feedback'
-                }]
+                }],
+                searchText: ''
+            }
+        },
+        methods: {
+            /*
+            * 切换样式
+            * */
+            toggleStyle() {
+                this.$refs['icon-style'].classList.toggle('nighttime')
+            },
+            /*
+            * 展开、折叠搜索框
+            * */
+            toggleSearch() {
+                this.$refs['icon-search'].classList.toggle('el-icon-close')
+                this.$refs['search-input'].classList.toggle('show')
+            },
+            /*
+            * 搜索
+            * */
+            search() {
+
             }
         }
     }
