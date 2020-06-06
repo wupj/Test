@@ -102,10 +102,9 @@ body {
         width: 100%;
         height: 2.25rem;
         padding: 1rem 0;
-        display: none;
 
-        &.show {
-          display: block
+        .el-icon-search {
+          float: right;
         }
       }
     }

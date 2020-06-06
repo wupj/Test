@@ -27,14 +27,19 @@
                             <i ref="icon-style" class="style-pattern daytime" @click="toggleStyle"></i>
                             <i ref="icon-search" class="icon-search el-icon-search" @click="toggleSearch"></i>
                         </div>
-                        <div ref="search-input" class="search-input">
-                            <el-input
-                                placeholder="请输入搜索关键词"
-                                suffix-icon="el-icon-search"
-                                v-model="searchText"
-                            @keyup.enter.native="search">
-                            </el-input>
-                        </div>
+                        <transition
+                                enter-active-class="fadeInDown"
+                                leave-active-class="fadeOutUp">
+                            <div ref="search-input" class="search-input animated" v-show="showSearch">
+                                <el-input
+                                        placeholder="请输入搜索关键词并按回车键"
+                                        suffix-icon="el-icon-search"
+                                        clearable
+                                        v-model="searchText"
+                                        @keyup.enter.native="search">
+                                </el-input>
+                            </div>
+                        </transition>
                     </div>
                 </el-col>
             </el-row>
@@ -76,6 +81,7 @@
                     name: '留言',
                     href: '/feedback'
                 }],
+                showSearch: false,
                 searchText: ''
             }
         },
@@ -91,7 +97,11 @@
             * */
             toggleSearch() {
                 this.$refs['icon-search'].classList.toggle('el-icon-close')
-                this.$refs['search-input'].classList.toggle('show')
+                if (this.showSearch) {
+                    this.showSearch = false
+                } else {
+                    this.showSearch = true
+                }
             },
             /*
             * 搜索
