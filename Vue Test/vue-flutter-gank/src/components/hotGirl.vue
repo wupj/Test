@@ -1,7 +1,7 @@
 <template>
     <div class="hotGirl">
         <el-card class="box-card">
-            <span>本周最🔥妹纸</span>
+            <span>{{ $t('lang.hottestGirlImage') }}</span>
             <router-link v-for="(item, index) in data" :key="index" :to="`/post/${item._id}`">
                 <el-image :src="item.url" :alt="item.alt">
                 </el-image>

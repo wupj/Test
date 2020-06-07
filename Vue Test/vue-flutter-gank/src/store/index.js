@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import _ from 'lodash'
+import i18n from '@/locales'
 
 Vue.use(Vuex)
 
@@ -8,8 +9,8 @@ export default new Vuex.Store({
     state: {
         category: [{
             type: 'Girl',
-            name: '妹纸',
-            desc: '念念不忘，必有回响',
+            name: i18n.t('lang.girl'),
+            desc: i18n.t('lang.girlDesc'),
             image: require('@/assets/girl.jpg')
         }, {
             type: 'Android',
@@ -28,12 +29,12 @@ export default new Vuex.Store({
             image: require('@/assets/flutter.jpg')
         }, {
             type: 'frontend',
-            name: '前端',
+            name: i18n.t('lang.frontend'),
             desc: 'Education is a progressive discovery of our own ignorance. （ W. Durant ）',
             image: require('@/assets/frontend.jpg')
         }, {
             type: 'backend',
-            name: '后端',
+            name: i18n.t('lang.backend'),
             desc: 'If you do not learn to think when you are young, you may never learn. （ Edison ）',
             image: require('@/assets/backend.jpg')
         }, {
@@ -43,7 +44,7 @@ export default new Vuex.Store({
             image: require('@/assets/app.jpg')
         }, {
             type: 'promote',
-            name: '推荐',
+            name: i18n.t('lang.promote'),
             desc: 'Just the recommend ~',
             image: require('@/assets/promote.jpg')
         }]

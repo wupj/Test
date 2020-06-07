@@ -8,7 +8,7 @@
                 <span class="img-time-years">{{ girlData.month }} {{ girlData.years }}</span>
             </div>
             <div class="img-footer">
-                <router-link :to="`/post/${girlData._id}`" class="img-footer-Journal">妹子图{{ girlData.title }}</router-link>
+                <router-link :to="`/post/${girlData._id}`" class="img-footer-Journal">{{ $t('lang.girlImage') }}{{ girlData.title }}</router-link>
                 <div class="text-muted">
                     <span>Random {{ girlData.type }}</span>
                     <i class="el-icon-refresh" @click="getData"></i>

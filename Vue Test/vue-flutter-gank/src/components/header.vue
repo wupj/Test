@@ -24,15 +24,23 @@
                             </ul>
                         </div>
                         <div class="icon">
-                            <i ref="icon-style" class="style-pattern daytime" @click="toggleStyle"></i>
-                            <i ref="icon-search" class="icon-search el-icon-search" @click="toggleSearch"></i>
+                            <el-tooltip :content="$t('lang.nightMode')" placement="bottom">
+                                <i ref="icon-style" class="style-pattern daytime" @click="toggleStyle"></i>
+                            </el-tooltip>
+                            <el-tooltip :content="$t('lang.searchTooltip')" placement="bottom">
+                                <i ref="icon-search" class="icon-search el-icon-search" @click="toggleSearch"></i>
+                            </el-tooltip>
                         </div>
+                        <el-radio-group class="lang" v-model="lang" size="mini" @change="changeLanguage">
+                            <el-radio-button label="zh">中</el-radio-button>
+                            <el-radio-button label="en">EN</el-radio-button>
+                        </el-radio-group>
                         <transition
                                 enter-active-class="fadeInDown"
                                 leave-active-class="fadeOutUp">
                             <div ref="search-input" class="search-input animated" v-show="showSearch">
                                 <el-input
-                                        placeholder="请输入搜索关键词并按回车键"
+                                        :placeholder="$t('lang.searchPlaceholder')"
                                         suffix-icon="el-icon-search"
                                         clearable
                                         v-model="searchText"
@@ -48,18 +56,20 @@
 </template>
 
 <script>
+    import { setup } from "@/locales/index.js"
     export default {
         name: 'header',
         data() {
             return {
+                lang: sessionStorage.getItem('language'),
                 navs: [{
-                    name: '首页',
+                    name: this.$t('lang.home'),
                     href: '/'
                 }, {
-                    name: '妹子',
+                    name: this.$t('lang.sister'),
                     href: '/specials/Girl'
                 }, {
-                    name: '干货',
+                    name: this.$t('lang.dryGoods'),
                     href: 'javascript:;',
                     children: [{
                         name: 'Android',
@@ -72,13 +82,13 @@
                         href: '/specials/iOS',
                     }]
                 }, {
-                    name: '专题',
+                    name: this.$t('lang.topic'),
                     href: '/specials'
                 }, {
                     name: 'Flutter',
                     href: '/specials/Flutter'
                 }, {
-                    name: '留言',
+                    name: this.$t('lang.message'),
                     href: '/feedback'
                 }],
                 showSearch: false,
@@ -86,15 +96,23 @@
             }
         },
         methods: {
-            /*
-            * 切换样式
-            * */
+            /**
+             * 切换中英文
+             */
+            changeLanguage() {
+                sessionStorage.setItem('language', this.lang)
+                setup(this.lang)
+                location.reload()
+            },
+            /**
+             * 切换样式
+             */
             toggleStyle() {
                 this.$refs['icon-style'].classList.toggle('nighttime')
             },
-            /*
-            * 展开、折叠搜索框
-            * */
+            /**
+             * 展开、折叠搜索框
+             */
             toggleSearch() {
                 this.$refs['icon-search'].classList.toggle('el-icon-close')
                 if (this.showSearch) {
@@ -103,9 +121,9 @@
                     this.showSearch = true
                 }
             },
-            /*
-            * 搜索
-            * */
+            /**
+             * 搜索
+             */
             search() {
 
             }

@@ -92,10 +92,10 @@
                 type: {},
                 navs: [{
                     type: 'Girl',
-                    name: '妹纸'
+                    name: this.$t('lang.girl')
                 }, {
                     type: 'promote',
-                    name: '推荐'
+                    name: this.$t('lang.promote')
                 }, {
                     type: 'Android',
                     name: 'Android'
@@ -107,10 +107,10 @@
                     name: 'IOS'
                 }, {
                     type: 'frontend',
-                    name: '前端'
+                    name: this.$t('lang.frontend')
                 }, {
                     type: 'backend',
-                    name: '后端'
+                    name: this.$t('lang.backend')
                 }, {
                     type: 'app',
                     name: 'APP'

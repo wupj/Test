@@ -1,8 +1,8 @@
 <template>
     <div class="special">
         <el-breadcrumb separator="/" style="margin-bottom: 20px;">
-            <el-breadcrumb-item :to="`/specials`">全部专题</el-breadcrumb-item>
-            <el-breadcrumb-item>专题</el-breadcrumb-item>
+            <el-breadcrumb-item :to="`/specials`">{{ $t('lang.allTopics') }}</el-breadcrumb-item>
+            <el-breadcrumb-item>{{ $t('lang.topic') }}</el-breadcrumb-item>
         </el-breadcrumb>
         <div class="no-gutters">
             <div class="top">

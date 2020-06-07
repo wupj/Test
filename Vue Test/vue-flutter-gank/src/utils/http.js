@@ -1,6 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 import {Message, Loading} from 'element-ui'
+import i18n from '@/locales'
 
 // 设置后端api路径
 axios.defaults.baseURL = 'https://gank.io/api/v2'
@@ -14,13 +15,13 @@ axios.interceptors.request.use(
     config => {
         loadingInstance = Loading.service({
             lock: true,
-            text: '数据加载中，请稍后...',
+            text: i18n.t('lang.ladingData'),
             spinner: 'el-icon-loading',
         })
         return config
     }, err => {
         loadingInstance.close()
-        Message.error('请求错误')
+        Message.error(i18n.t('lang.requestError'))
         return Promise.reject(err)
 })
 
@@ -37,7 +38,7 @@ axios.interceptors.response.use(res => {
     }
 }, err => {
     loadingInstance.close()
-    Message.error('请求失败，请稍后再试')
+    Message.error(i18n.t('lang.requestFailed'))
     return Promise.reject(err)
 })
 

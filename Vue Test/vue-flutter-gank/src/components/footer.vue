@@ -5,9 +5,9 @@
                 <div class="container">
                     <div class="left">
                         <div class="footer-menu">
-                            <router-link to="/">主页</router-link>
+                            <router-link to="/">{{ $t('lang.homePage') }}</router-link>
                         </div>
-                        <div class="footer-copyright">Copyright © 2015-{{nowData}} 干货集中营 gank.io 沪ICP备13038357号-9</div>
+                        <div class="footer-copyright">Copyright © 2015-{{nowData}} {{ $t('lang.gank') }} gank.io 沪ICP备13038357号-9</div>
                     </div>
                     <div class="right">
                         <span v-for="(item, index) in icons" :key="index"><i :class="item"></i></span>

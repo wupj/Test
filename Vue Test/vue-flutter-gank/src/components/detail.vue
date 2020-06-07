@@ -2,7 +2,7 @@
     <div class="detail">
         <el-breadcrumb separator="/">
             <el-breadcrumb-item :to="`/specials/${data.type}`">{{ type[data.type]}}</el-breadcrumb-item>
-            <el-breadcrumb-item>妹纸图{{ data.title}}</el-breadcrumb-item>
+            <el-breadcrumb-item>{{ $t('lang.girlImage') }}{{ data.title}}</el-breadcrumb-item>
         </el-breadcrumb>
         <div class="no-gutters">
             <template v-if="data.type === 'Girl'">
@@ -11,9 +11,9 @@
                     </el-image>
                     <div class="media">
                         <span class="type">#{{ type[data.type] }}#</span>
-                        <span class="journal">妹纸图{{ data.title }}</span>
+                        <span class="journal">{{ $t('lang.girlImage') }}{{ data.title }}</span>
                         <span class="text">
-                            {{ data.author }} 发布于{{ data.publishedAt }} <i class="el-icon-view"></i> {{ data.views }}
+                            {{ data.author }} {{ $t('lang.girlImage') }}{{ data.publishedAt }} <i class="el-icon-view"></i> {{ data.views }}
                             <i class="el-icon-thumb"></i> {{ data.likeCounts }}
                         </span>
                     </div>
@@ -39,7 +39,7 @@
             </el-card>
             <div class="comment-block">
                 <span class="comment-block-top">
-                    <i class="el-icon-chat-dot-square"></i>评论({{ comment.length }})
+                    <i class="el-icon-chat-dot-square"></i>{{ $t('lang.comment') }}({{ comment.length }})
                 </span>
                 <el-card class="box-card">
                     <div class="comment">

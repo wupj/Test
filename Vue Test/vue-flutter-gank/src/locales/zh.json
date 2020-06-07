@@ -1,0 +1,37 @@
+{
+  "lang": {
+    "girl": "妹纸",
+    "girlDesc": "念念不忘，必有回响",
+    "frontend": "前端",
+    "backend": "后端",
+    "promote": "推荐",
+    "home": "首页",
+    "sister": "妹子",
+    "dryGoods": "干货",
+    "topic": "专题",
+    "message": "留言",
+    "nightMode": "夜间模式",
+    "dayMode": "日间模式",
+    "searchTooltip": "搜索",
+    "searchPlaceholder": "请输入搜索关键词并按回车键",
+    "homePage": "主页",
+    "gank": "干货集中营",
+    "girlImage": "妹纸图",
+    "postedOn": "发布于",
+    "myHomePage": "我的主页",
+    "messageBoard": "留言板",
+    "hottestArticles": "本周最热文章",
+    "hottestDryGoods": "本周最热干货",
+    "hottestGirlImage": "本周最\uD83D\uDD25妹纸",
+    "allTopics": "全部专题",
+    "comment": "评论",
+    "ladingData": "数据加载中，请稍后...",
+    "requestError": "请求错误",
+    "requestFailed": "请求失败，请稍后再试",
+    "firstSectionMessage": "透过车窗看着窗外的风景滑过眼前，不知走过多少路程，我总是找不到属于我的站台，静静看着无数双手牵在一起，我只能握紧自己的手，期待的总是不会重来，时间不会倒转，爱也不能挽回，静静的听着鸣笛的车声，默默的注视匆忙的行人，一个人抓着那无人接听的手机发呆，那拨不出去的信号，那无法得到的答复，那熟悉而又陌生的声音………",
+    "secondSectionMessage": "如果没有那样的秋天，如果没有那样的秋夕，如果没有那样的相遇，谁会手里握着那一串久久不敢放开的往事，躲在无人的角落，偷偷地想念。",
+    "thirdSectionMessage": "茫然的心境，遥远的梦幻，飘荡，游离……恍若几个世纪，那么漫长。为了那份渴望已久梦中痴缠的美丽，我痴痴地等，傻傻地念，任岁月忽明忽暗地漫过我憔悴的身影。",
+    "fourthSectionMessage": "所以.. 所以.. 所以请尽情留言吧 \uD83D\uDE02\uD83D\uDE02 (只要服务器不崩溃\uD83D\uDE07)"
+
+  }
+}
