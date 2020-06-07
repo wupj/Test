@@ -30,6 +30,10 @@
                             <el-tooltip :content="$t('lang.searchTooltip')" placement="bottom">
                                 <i ref="icon-search" class="icon-search el-icon-search" @click="toggleSearch"></i>
                             </el-tooltip>
+                            <el-radio-group v-model="login" size="mini" @change="loginIn">
+                                <el-radio-button label="0">{{ $t('lang.register') }}</el-radio-button>
+                                <el-radio-button label="1">{{ $t('lang.login') }}</el-radio-button>
+                            </el-radio-group>
                         </div>
                         <el-radio-group class="lang" v-model="lang" size="mini" @change="changeLanguage">
                             <el-radio-button label="zh">中</el-radio-button>
@@ -62,6 +66,7 @@
         data() {
             return {
                 lang: sessionStorage.getItem('language'),
+                login: '1',
                 navs: [{
                     name: this.$t('lang.home'),
                     href: '/'
@@ -119,6 +124,14 @@
                     this.showSearch = false
                 } else {
                     this.showSearch = true
+                }
+            },
+            /**
+             * 登录注册
+             */
+            loginIn() {
+                if (this.$route.path !== '/login') {
+                    this.$router.push({path: '/login'})
                 }
             },
             /**

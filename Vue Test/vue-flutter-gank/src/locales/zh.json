@@ -13,6 +13,8 @@
     "nightMode": "夜间模式",
     "dayMode": "日间模式",
     "searchTooltip": "搜索",
+    "register": "注册",
+    "login": "登录",
     "searchPlaceholder": "请输入搜索关键词并按回车键",
     "homePage": "主页",
     "gank": "干货集中营",

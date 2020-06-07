@@ -13,6 +13,8 @@
     "nightMode": "Night mode",
     "dayMode": "Day mode",
     "searchTooltip": "search",
+    "register": "register",
+    "login": "login",
     "searchPlaceholder": "Please enter search keywords and press enter",
     "homePage": "Home page",
     "gank": "gank",
