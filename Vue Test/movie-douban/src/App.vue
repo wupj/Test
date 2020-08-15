@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <transition name="router-fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
+    <v-header></v-header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Header from "@/components/header";
 export default {
   name: "App",
-  components: {}
+  components: {
+    "v-header": Header
+  }
 };
 </script>
