@@ -1,4 +1,4 @@
-# baidu-music
+# movie-douban
 
 ## Project setup
 ```

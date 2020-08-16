@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       searchText: "",
-      lang: "zh"
+      lang: ""
     };
   },
   methods: {
@@ -55,7 +55,11 @@ export default {
     /* 切换中英文 */
     changeLanguages() {
       this.$i18n.locale = this.lang;
+      sessionStorage.setItem("locale", this.lang);
     }
+  },
+  mounted() {
+    this.lang = this.$i18n.locale;
   }
 };
 </script>
